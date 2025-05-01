@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop First, Then View Leaderboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #fefefe;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+    }
+    .ad {
+      background: #ff5722;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    #countdown {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ad">
+      <h2>🔥 Special Offer on Shopee!</h2>
+      <p>You will be redirected to Shopee in a moment...</p>
+    </div>
+    <p>You will be redirected to the leaderboard in:</p>
+    <p id="countdown">8</p>
+    <p>Redirecting you to the tournament leaderboard...</p>
+  </div>
+
+  <script>
+    // Countdown timer
+    var countdownTime = 8; // Set the time here (in seconds)
+    var countdownDisplay = document.getElementById("countdown");
+
+    var countdownInterval = setInterval(function() {
+      countdownTime--;
+      countdownDisplay.textContent = countdownTime;
+
+      // When countdown reaches 0, clear the interval and redirect to Scoreleader
+      if (countdownTime <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "https://scoreleader.com/u/S6SEAHA"; // Redirect to leaderboard
+      }
+    }, 1000);
+
+    // Redirect to Shopee in a new tab after 2 seconds delay (to avoid blocking)
+    setTimeout(function() {
+      window.open("https://s.shopee.com.my/2fyFSbbjrE", "_blank");
+    }, 2000); // Shopee will open in 2 seconds
+  </script>
+</body>
+</html>
